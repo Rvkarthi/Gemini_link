@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Be Smart. Start Using AI.</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+
+  <style>
+    /* Gradient Title */
+    .gradient-text {
+      background: linear-gradient(90deg, #4285F4, #EA4335, #FBBC05, #34A853);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 300% 300%;
+      animation: gradientMove 5s infinite alternate;
+    }
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    /* Golden Glow Shine Button */
+    .shine-btn {
+      position: relative;
+      background: linear-gradient(90deg, #FFD700, #FFA500);
+      color: #fff;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+    }
+    .shine-btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -75%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(120deg, rgba(255, 255, 255, 0.6), transparent);
+      transform: skewX(-25deg);
+      animation: shine 3s infinite;
+    }
+    @keyframes shine {
+      0% { left: -75%; }
+      100% { left: 125%; }
+    }
+  </style>
+</head>
+
+<body class="bg-white text-center min-h-screen flex flex-col items-center justify-center px-6">
+
+  <!-- HERO SECTION -->
+  <div class="mb-16 mt-10">
+    <h1 class="gtop text-5xl md:text-6xl font-bold mb-4 leading-tight">
+      Be Smart. <span class="gradient-text">Start Using AI.</span>
+    </h1>
+    <p class="gtop text-gray-500 text-lg md:text-xl max-w-2xl mx-auto mb-10  ">
+      Your AI partner for research, creation, and innovation — powered by Gemini Pro.
+    </p>
+
+    <button id="tryGemini" class="shine-btn  px-10 py-4 text-lg font-semibold rounded-full transition-transform hover:scale-110">
+      Try Gemini
+    </button>
+
+    <p class="mt-6 text-blue-600 font-semibold underline text-sm gdown font-sans">
+      <a href="https://www.jio.com/apps/myjio/" target="_blank">Get Gemini Pro for Jio Users</a>
+    </p>
+  </div>
+
+  <!-- FEATURE BLOCKS -->
+  <div id="features" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl w-full px-6 mb-16">
+    <div class="p-6 rounded-2xl shadow-lg bg-gradient-to-r from-blue-50 to-blue-100">
+      <div class="text-3xl mb-2">💫</div>
+      <h3 class="font-semibold text-xl mb-2">Gemini App</h3>
+      <p class="text-gray-600">Deep research on Gemini 2.5 Pro with premium model access and Veo 3.1 integration.</p>
+    </div>
+
+    <div class="p-6 rounded-2xl shadow-lg bg-gradient-to-r from-yellow-50 to-yellow-100">
+      <div class="text-3xl mb-2">💰</div>
+      <h3 class="font-semibold text-xl mb-2">1000 Monthly Credits</h3>
+      <p class="text-gray-600">Use AI credits for Flow and Whisk video generation and other creative tools.</p>
+    </div>
+
+    <div class="p-6 rounded-2xl shadow-lg bg-gradient-to-r from-purple-50 to-purple-100">
+      <div class="text-3xl mb-2">🎬</div>
+      <h3 class="font-semibold text-xl mb-2">Flow</h3>
+      <p class="text-gray-600">Enhanced access to cinematic AI filmmaking and Veo 3.1 for storytelling.</p>
+    </div>
+
+    <div class="p-6 rounded-2xl shadow-lg bg-gradient-to-r from-pink-50 to-pink-100">
+      <div class="text-3xl mb-2">🖼️</div>
+      <h3 class="font-semibold text-xl mb-2">Whisk</h3>
+      <p class="text-gray-600">Transform your photos into videos with powerful Veo 3 technology.</p>
+    </div>
+
+    <div class="p-6 rounded-2xl shadow-lg bg-gradient-to-r from-green-50 to-green-100">
+      <div class="text-3xl mb-2">📓</div>
+      <h3 class="font-semibold text-xl mb-2">NotebookLM</h3>
+      <p class="text-gray-600">Your research and writing assistant with 5× more audio and notebook access.</p>
+    </div>
+
+    <div class="p-6 rounded-2xl shadow-lg bg-gradient-to-r from-gray-50 to-gray-100">
+      <div class="text-3xl mb-2">☁️</div>
+      <h3 class="font-semibold text-xl mb-2">Storage</h3>
+      <p class="text-gray-600">2 TB of shared cloud storage for Photos, Drive, and Gmail — all in one place.</p>
+    </div>
+  </div>
+
+  <div>
+    <p>created by Karthikrishna</p>
+  </div>
+
+  <script>
+    // Open multiple Gemini links when clicked
+    document.getElementById("tryGemini").addEventListener("click", () => {
+      const links = [
+        "https://aiskillshouse.com/student/qr-mediator.html?uid=5383&promptId=22",
+        "https://aiskillshouse.com/student/qr-mediator.html?uid=5383&promptId=21",
+        "https://aiskillshouse.com/student/qr-mediator.html?uid=5383&promptId=20",
+        "https://aiskillshouse.com/student/qr-mediator.html?uid=5383&promptId=19",
+        "https://aiskillshouse.com/student/qr-mediator.html?uid=5383&promptId=18"
+      ];
+
+      // Then slowly open others to reduce block chance
+    //   let delay = 5000;
+    //   for (let i = 0; i < links.length; i++) {
+    //     setTimeout(() => window.open(links[i], "_blank"), delay * i);
+    //   }
+    // });
+    // open the first Gemini link in same tab
+
+
+  // Open a single new window/tab immediately (this is allowed on user click)
+  const win = window.open(links[0], "gem-window"); // "gem-window" is the target name
+
+  if (!win) {
+    // popup blocked — fallback: navigate current tab instead
+    alert("Popup blocked. Redirecting current page instead.");
+    let i = 0;
+    window.location.href = links[i];
+    const fallbackInterval = setInterval(() => {
+      i++;
+      if (i < links.length) window.location.href = links[i];
+      else clearInterval(fallbackInterval);
+    }, 5000);
+    return;
+  }
+
+  // Now schedule navigation of that opened window to next links every 5s
+  let i = 1; // next index (we already opened index 0)
+  const timer = setInterval(() => {
+    if (i >= links.length) {
+      clearInterval(timer);
+      return;
+    }
+    try {
+      // change location of the already opened window (not a new popup)
+      win.location.href = links[i];
+    } catch (e) {
+      // if cross-origin restrictions throw, try using win.location.assign (same idea)
+      try { win.location.assign(links[i]); } catch (err) { console.warn("Could not redirect child window:", err); clearInterval(timer); }
+    }
+    i++;
+  }, 5000);
+    });
+
+    // Animate feature blocks using GSAP
+    gsap.from("#features > div", {
+      opacity: 0,
+      y: 30,
+      scale: 0.95,
+      duration: 0.8,
+      stagger: 0.15,
+      ease: "easeOut"
+    });
+
+    gsap.from(".gtop",{
+        delay: 0.5,
+        y: -50,
+        opacity: 0,
+        ease: "easeIn",
+        stagger: 0.15
+    })
+
+    gsap.from(".gdown",{
+        delay: 0.5,
+        y: 50,
+        opacity: 0,
+        ease: "easeIn",
+        stagger: 0.15
+    })
+
+    gsap.from("#tryGemini",{
+
+        scale: 100,
+        opacity: 0,
+        ease: "easeIn",
+    })
+
+    // Gentle floating motion
+    gsap.to("#features > div", {
+      delay: 1,
+      y: 10,
+      duration: 3,
+      ease: "sine.inOut",
+      stagger: 0.2
+    });
+  </script>
+
+</body>
+</html>
